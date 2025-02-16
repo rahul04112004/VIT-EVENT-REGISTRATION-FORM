@@ -1,0 +1,274 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Registration Page</title> 
+    <style> 
+        body { 
+            background: #f0f0f0; 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        } 
+ 
+        #header { 
+            background: #3498db; 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px 0; 
+        } 
+ 
+        #k2 { 
+            text-align: center; 
+            color:black; 
+            transition: color 0.5s; /* Add a transition for the color property */ 
+        } 
+          #k2:hover { 
+        color: #e74c3c; /* Change color on hover */ 
+    } 
+ 
+        #k6 { 
+            color: #e74c3c; 
+ 
+            text-align: center; 
+ 
+        } 
+ 
+        #m { 
+            padding: 2% 10%; 
+            background-image: url("clgform.jpg"); 
+            background-color: #000; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: cover; 
+            color: #2d8b25; 
+            border-radius: 5px; 
+        } 
+ 
+        .form-container { 
+            background: rgba(255, 255, 255, 0.8); 
+            padding: 20px; 
+            border-radius: 5px; 
+        } 
+ 
+        .input-container { 
+            margin-bottom: 15px; 
+        } 
+ 
+        label { 
+            display: block; 
+            font-weight: bold; 
+            color: #333; 
+        } 
+ 
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"], 
+        input[type="tel"], 
+        select, 
+        textarea { 
+            width: 100%;  
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            background: #f8f8f8; 
+            font-size: 16px; 
+        } 
+ 
+        .input-container input:focus, 
+        .input-container textarea:focus, 
+        .input-container select:focus { 
+            outline: none; 
+            border: 1px solid #3498db; 
+        } 
+ 
+        .input-container input[type="file"] { 
+            border: none; 
+            padding: 0; 
+        } 
+ 
+        .input-container input[type="file"]:hover { 
+            cursor: pointer; 
+        } 
+ 
+        .input-container input[type="submit"] { 
+            background: #e74c3c; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        } 
+ 
+        .input-container input[type="submit"]:hover { 
+            background: #c0392b; 
+        } 
+ 
+        .input-container textarea { 
+            resize: vertical; 
+        } 
+ 
+        .input-container input[type="radio"], 
+        .input-container input[type="checkbox"] { 
+            margin-right: 10px; 
+        } 
+/* Add transitions to label and input fields */ 
+        .input-container input, .input-container label { 
+            transition: all 0.3s; 
+        } 
+    </style> 
+</head> 
+<body> 
+<div id="header"> 
+    <h2 id="k2"><br><marquee>V.I.T EVENT REGISTRATION 
+PORTAL<br> EVENT-DATE: 27-10-2023</marquee><br></h2> 
+</div> 
+<div id="m"> 
+    <h2 id="k6"><marquee>V.I.T EVENT REGISTRATION FORM 
+</marquee></h2> 
+    <div class="form-container"> 
+        <form name="myForm" action="thankyou.html" onsubmit="return validateForm()" method="post"> 
+            <div class="input-container"> 
+                <label for="fname">First Name</label> 
+                <input type="text" name="fname"> 
+            </div> 
+            <div class="input-container"> 
+                <label for="Lastname">Last Name</label> 
+                <input type="text" name="Lastname"> 
+            </div> 
+            <div class="input-container"> 
+                <label for="Middlename">Middle Name</label> 
+                <input type="text" name="Middlename"> 
+            </div> 
+            <div class="input-container">  
+                <label for="pswd">Password</label> 
+                <input type="password" name="pswd" placeholder="Rwzvxg@123"> 
+            </div> 
+            <div class="input-container"> 
+                <label for="email">V.I.T Email</label> 
+                <input type="email" name="email" placeholder="example@vitstudent.ac.in"> 
+            </div> 
+            <div class="input-container"> 
+                <label for="Regdno">Registration Number</label> 
+                <input type="text" name="Regdno" placeholder="12ABC3456"> 
+            </div> 
+            <div class="input-container"> 
+                <label for="zip">Zip Code</label> 
+                <input id="zip" name="zip" type="text"> 
+            </div> 
+ 
+            <!-- Radio buttons for gender --> 
+            <div class="input-container"> 
+                <label>Gender:</label> 
+                <input type="radio" name="gender" value="male"> Male 
+                <input type="radio" name="gender" value="female"> Female 
+            </div> 
+ 
+            <!-- Phone number text box --> 
+            <div class="input-container"> 
+                <label for="phone">Phone Number</label> 
+                <input type="tel" name="phone" placeholder="Enter your phone number"> 
+            </div> 
+ 
+            <!-- Checkboxes for interested fields --> 
+            <div class="input-container"> 
+                <label>Please select your interested field:</label> 
+ 
+                <input type="checkbox" name="interest" value="Dance"> Dance 
+                <input type="checkbox" name="interest" value="Music"> Music 
+                <input type="checkbox" name="interest" value="Singing"> Singing 
+                <input type="checkbox" name="interest" value="Magic"> Magic 
+                <input type="checkbox" name="interest" value="Martial Arts"> Martial Arts 
+                <input type="checkbox" name="interest" value="Skit"> Skit 
+                <input type="checkbox" name="interest" value="Others"> Others 
+            </div> 
+ 
+            <!-- Additional Comments text box --> 
+            <div class="input-container"> 
+                <label for="comments">Additional Comments</label> 
+                <textarea name="comments" rows="3" placeholder="Enter your comments here"></textarea> 
+            </div> 
+ 
+            <!-- File upload --> 
+            <div class="input-container"> 
+                <label for="file">Upload Photo</label> 
+                <input type="file" name="file"> 
+            </div> 
+ 
+            <input type="submit" value="Register"> 
+        </form> 
+    </div> 
+</div> 
+<script> 
+function ValidateEmail(inputText) { 
+  var regEmail = /^\w+\.?\w*@vitstudent\.ac\.in$/; 
+  if (inputText.value.match(regEmail)) { 
+    alert("Valid VIT email address!"); 
+    document.myForm.email.focus(); 
+    return true; 
+  } else { 
+    alert("Please enter a valid VIT student email address (example: 
+john.doe@vitstudent.ac.in)"); 
+    document.myForm.email.focus(); 
+    return false; 
+  } 
+} 
+ 
+function validateForm() { 
+  var fname = document.myForm.fname.value; 
+  var Lastname = document.myForm.Lastname.value; 
+  var pswd = document.myForm.pswd.value; 
+  var email = document.myForm.email.value; 
+  var Regdno = document.myForm.Regdno.value; 
+  var zip = document.myForm.zip.value; 
+  var phone = document.myForm.phone.value; 
+ 
+  // All fields are mandatory 
+  if (fname == "" || Lastname == "" || pswd == "" || email == "" || 
+Regdno == "" || zip == "" || phone == "") { 
+    alert("All fields are mandatory. Please fill in all required fields."); 
+    return false; 
+  } 
+ 
+  // Zip code should be exactly five digits 
+  var regZip = /^\d{5}$/; 
+  if (!regZip.test(zip)) { 
+    alert("Zip code should be exactly five digits."); 
+    return false; 
+  } 
+ 
+  // Password conditions 
+  var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[09])(?=.*[~!@#\$%\^*\-_=\+\[\]{}\/;:,.?]).{10,100}$/; 
+  if (!regPassword.test(pswd)) { 
+    alert("Password does not meet the required conditions."); 
+    return false; 
+  } 
+ 
+  // Mobile number should be 10 digits only 
+  var regPhone = /^\d{10}$/; 
+  if (!regPhone.test(phone)) { 
+    alert("Mobile number should be exactly 10 digits."); 
+    return false; 
+  } 
+ 
+  // Registration number format validation 
+  var regrno = /^[0-9]{2}[A-Z]{3}[0-9]{4}$/; 
+  if (!regrno.test(Regdno)) { 
+    alert("Invalid Registration Number format. Example format: 12ABC3456"); 
+    return false; 
+  } 
+alert("Thank you! Form submitted successfully."); 
+  return true; 
+} 
+</script> 
+<footer> 
+    <h4><marquee>V.I.T cultural department is holding an event for 
+the college fest, which will take place on October 27th, 2023. 
+Interested students can join by completing this registration 
+form.</marquee></h4> 
+    <p>Click on this link for additional information: <a 
+href="https://vit.ac.in/general/riviera-2023">click here</a></p> 
+</footer> 
+</body> 
+</html> 
